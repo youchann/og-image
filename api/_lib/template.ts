@@ -100,6 +100,7 @@ function getCss(theme: string, fontSize: string) {
         font-family: 'M PLUS 1p', 'Inter', sans-serif;
         font-size: ${sanitizeHtml(fontSize)};
         font-style: normal;
+        font-weight: 400;
         color: ${foreground};
         line-height: 1.8;
     }`;
