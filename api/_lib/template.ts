@@ -58,7 +58,7 @@ function getCss(theme: string, fontSize: string) {
 
     code {
         color: #D400FF;
-        font-family: 'Vera';
+        font-family: 'Vera', 'M PLUS 1p';
         white-space: pre-wrap;
         letter-spacing: -5px;
     }
@@ -86,7 +86,7 @@ function getCss(theme: string, fontSize: string) {
     }
 
     .spacer {
-        margin: 150px;
+        margin: 75px;
     }
 
     .emoji {
