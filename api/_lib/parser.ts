@@ -15,15 +15,16 @@ export function parseRequest(req: IncomingMessage) {
     }
     
     const arr = (pathname || '/').slice(1).split('.');
+    console.log(arr)
     let extension = '';
     let text = '';
     if (arr.length === 0) {
         text = '';
     } else if (arr.length === 1) {
-        text = arr[0];
+        text = arr[0].replace('api/','');
     } else {
         extension = arr.pop() as string;
-        text = arr.join('.');
+        text = arr.join('.').replace('api/','');
     }
 
     const parsedRequest: ParsedRequest = {
