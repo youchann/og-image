@@ -15,16 +15,16 @@ export function parseRequest(req: IncomingMessage) {
     }
     
     const arr = (pathname || '/').slice(1).split('.');
-    const unnecessaryPrefix = 'api/'
+    const apiVersion = 'apiv2/'
     let extension = '';
     let text = '';
     if (arr.length === 0) {
         text = '';
     } else if (arr.length === 1) {
-        text = arr[0].replace(unnecessaryPrefix,'');
+        text = arr[0].replace(apiVersion,'');
     } else {
         extension = arr.pop() as string;
-        text = arr.join('.').replace(unnecessaryPrefix,'');
+        text = arr.join('.').replace(apiVersion,'');
     }
 
     const parsedRequest: ParsedRequest = {
