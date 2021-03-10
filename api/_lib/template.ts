@@ -22,7 +22,7 @@ function getCss(theme: string, fontSize: string) {
         radial = 'dimgray';
     }
     return `
-    @import url('https://fonts.googleapis.com/css?family=M+PLUS+1p');
+    @import url('https://fonts.googleapis.com/css?family=Noto+Sans+JP');
 
     @font-face {
         font-family: 'Inter';
@@ -97,7 +97,7 @@ function getCss(theme: string, fontSize: string) {
     }
     
     .heading {
-        font-family: 'M PLUS 1p', 'Inter', sans-serif;
+        font-family: 'Noto Sans JP', 'Inter', sans-serif;
         font-size: ${sanitizeHtml(fontSize)};
         font-style: normal;
         font-weight: 400;
