@@ -102,7 +102,7 @@ function getCss(theme: string, fontSize: string) {
         font-style: normal;
         font-weight: 400;
         color: ${foreground};
-        line-height: 1.8;
+        line-height: 1.5;
     }`;
 }
 
