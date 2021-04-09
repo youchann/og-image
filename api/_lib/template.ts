@@ -72,7 +72,9 @@ function getCss(theme: string, fontSize: string) {
     }
 
     .logo {
-        margin: 0 75px;
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
     }
 
     .plus {
@@ -103,7 +105,7 @@ function getCss(theme: string, fontSize: string) {
 }
 
 export function getHtml(parsedReq: ParsedRequest) {
-    const { text, theme, md, fontSize } = parsedReq;
+    const { text, theme, md, fontSize, image } = parsedReq;
     return `<!DOCTYPE html>
 <html>
     <meta charset="utf-8">
@@ -114,13 +116,26 @@ export function getHtml(parsedReq: ParsedRequest) {
     </style>
     <body>
         <div>
-            <div class="spacer">
             <div class="heading">${emojify(
                 md ? marked(text) : sanitizeHtml(text)
             )}
             </div>
         </div>
+        ${image && getImage(image)}
     </body>
 </html>`;
+}
+
+function getImage(src: string, width ='auto', height = '80') {
+    return `
+        <div class="logo">
+            <img
+                alt="Generated Image"
+                src="${sanitizeHtml(src)}"
+                width="${sanitizeHtml(width)}"
+                height="${sanitizeHtml(height)}"
+            />
+        </div>
+    `;
 }
 

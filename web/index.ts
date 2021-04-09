@@ -159,9 +159,10 @@ const App = (_: any, state: AppState, setState: SetState) => {
     };
     const {
         fileType = 'png',
-        fontSize = '60px',
+        fontSize = '50px',
         theme = 'light',
         md = true,
+        image = "https://youchan.site/logo.png",
         text = '**Hello** World',
         showToast = false,
         messageToast = '',
@@ -174,6 +175,7 @@ const App = (_: any, state: AppState, setState: SetState) => {
     url.searchParams.append('theme', theme);
     url.searchParams.append('md', mdValue);
     url.searchParams.append('fontSize', fontSize);
+    url.searchParams.append('image', image);
 
     return H('div',
         { className: 'split' },
@@ -221,6 +223,16 @@ const App = (_: any, state: AppState, setState: SetState) => {
                         oninput: (val: string) => {
                             console.log('oninput ' + val);
                             setLoadingState({ text: val, overrideUrl: url });
+                        }
+                    })
+                }),
+                H(Field, {
+                    label: 'Image',
+                    input: H(TextInput, {
+                        value: image,
+                        oninput: (val: string) => {
+                            console.log('oninput ' + val);
+                            setLoadingState({ image: val, overrideUrl: url });
                         }
                     })
                 }),
