@@ -62,7 +62,7 @@ You'll want to fork this repository and deploy your own image generator.
 
 If you are using a paid plan, you can do a one-click deploy with the button below.
 
-[![Deploy to Vercel](https://vercel.com/button)](https://vercel.com/new/project?template=vercel/og-image)
+[![Deploy to Vercel](https://vercel.com/button)](https://vercel.com/new/project?template=youchann/og-image)
 
 Once you have an image generator that sparks joy, you can setup [automatic GitHub](https://vercel.com/github) deployments so that pushing to master will deploy to production! 🚀
 
